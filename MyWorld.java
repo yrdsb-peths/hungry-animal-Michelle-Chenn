@@ -20,6 +20,9 @@ public class MyWorld extends World
         
         Bear bob = new Bear();
         addObject(bob, 300, 300);
+        
+        Cherries cherries = new Cherries();
+        addObject(cherries, 300, 0);
     }
 
 }
