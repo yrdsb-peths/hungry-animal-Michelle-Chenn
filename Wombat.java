@@ -23,5 +23,20 @@ public class Wombat extends Actor
         {
             move(1);
         }
+        
+        //Remove cherries if wombat eats it
+        eat();
+        
+    }
+    
+    /**
+     * Eat the cherries and spawn new cherries if it is eaten
+     */
+    public void eat(){
+        if(isTouching(Cherries.class)){
+            removeTouching(Cherries.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createCherries();
+        }
     }
 }

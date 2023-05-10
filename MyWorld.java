@@ -21,8 +21,17 @@ public class MyWorld extends World
         Wombat bob = new Wombat();
         addObject(bob, 300, 300);
         
+        createCherries();
+    }
+    
+    /**
+     * Create new cherries at random location at top of screen
+     */
+    public void createCherries(){
         Cherries cherries = new Cherries();
-        addObject(cherries, 300, 0);
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = 0;
+        addObject(cherries, x, y);
     }
 
 }
