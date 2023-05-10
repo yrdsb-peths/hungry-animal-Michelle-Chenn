@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bear extends Actor
+public class Wombat extends Actor
 {
     /**
      * Act - do whatever the Bear wants to do. This method is called whenever
@@ -15,7 +15,13 @@ public class Bear extends Actor
     public void act()
     {
         // Add your action code here.
-        move(1);
-        
+        if(Greenfoot.isKeyDown("a"))
+        {
+            move(-1);
+        }
+        else if(Greenfoot.isKeyDown("d"))
+        {
+            move(1);
+        }
     }
 }
