@@ -18,11 +18,11 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false);
+        super(710, 400, 1, false);
         
         //Create wombat object
         Wombat bob = new Wombat();
-        addObject(bob, 300, 300);
+        addObject(bob, 355, 300);
         
         //Create a label
         scoreLabel = new Label(0, 80);

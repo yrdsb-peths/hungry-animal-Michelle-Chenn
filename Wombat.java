@@ -17,11 +17,11 @@ public class Wombat extends Actor
         // Add your action code here.
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-1);
+            move(-2);
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(1);
+            move(2);
         }
         
         //Remove cherries if wombat eats it
