@@ -37,6 +37,7 @@ public class Wombat extends Actor
             removeTouching(Cherries.class);
             MyWorld world = (MyWorld) getWorld();
             world.createCherries();
+            world.increaseScore();
         }
     }
 }

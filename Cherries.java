@@ -18,5 +18,12 @@ public class Cherries extends Actor
         
         //makes it fall down
         setLocation(getX(), getY() + 1);
+        
+        //Remove cherries and draw game over when cherries hit the bottom
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >= world.getHeight()){
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
 }
