@@ -8,6 +8,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Wombat extends Actor
 {
+    GreenfootImage[] idle = new GreenfootImage[4];
+    
+    /**
+     * Constructor - The code that gets run one time when object is created
+     */
+    
+    public Wombat(){
+        for(int i = 0; i < idle.length; i++){
+            idle[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    /**
+     * animate bear
+     */
+    
+    int imageIndex = 0;
+    public void animateBear(){
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     /**
      * Act - do whatever the Bear wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,6 +50,8 @@ public class Wombat extends Actor
         //Remove cherries if wombat eats it
         eat();
         
+        //animate bear
+        animateBear();
     }
     
     /**
