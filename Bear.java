@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Wombat extends Actor
+public class Bear extends Actor
 {
     GreenfootImage[] idle = new GreenfootImage[4];
     
@@ -14,7 +14,7 @@ public class Wombat extends Actor
      * Constructor - The code that gets run one time when object is created
      */
     
-    public Wombat(){
+    public Bear(){
         for(int i = 0; i < idle.length; i++){
             idle[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
         }
@@ -47,7 +47,7 @@ public class Wombat extends Actor
             move(2);
         }
         
-        //Remove cherries if wombat eats it
+        //Remove cherries if Bear eats it
         eat();
         
         //animate bear
