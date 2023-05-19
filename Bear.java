@@ -8,17 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bear extends Actor
 {
-    GreenfootImage[] idle = new GreenfootImage[4];
+    GreenfootImage[] idleRight = new GreenfootImage[4];
+    GreenfootImage[] idleLeft = new GreenfootImage[4];
+    
+    // Direction the bear is facing
+    String facing = "right";
     
     /**
      * Constructor - The code that gets run one time when object is created
      */
     
     public Bear(){
-        for(int i = 0; i < idle.length; i++){
-            idle[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
+        for(int i = 0; i < idleRight.length; i++){
+            idleRight[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
         }
-        setImage(idle[0]);
+        
+        for(int i = 0; i < idleLeft.length; i++){
+            idleLeft[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
+            idleLeft[i].mirrorHorizontally();
+        }
+        
+        //Initial bear image
+        setImage(idleRight[0]);
     }
     
     /**
@@ -27,8 +38,14 @@ public class Bear extends Actor
     
     int imageIndex = 0;
     public void animateBear(){
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if(facing.equals("right")){
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else{
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
     }
     
     /**
@@ -41,10 +58,12 @@ public class Bear extends Actor
         if(Greenfoot.isKeyDown("a"))
         {
             move(-2);
+            facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
             move(2);
+            facing = "right";
         }
         
         //Remove cherries if Bear eats it
