@@ -13,7 +13,7 @@ public class Bear extends Actor
     
     // Direction the bear is facing
     String facing = "right";
-    
+    SimpleTimer animationTimer = new SimpleTimer();
     /**
      * Constructor - The code that gets run one time when object is created
      */
@@ -28,6 +28,8 @@ public class Bear extends Actor
             idleLeft[i].mirrorHorizontally();
         }
         
+        animationTimer.mark();
+        
         //Initial bear image
         setImage(idleRight[0]);
     }
@@ -38,6 +40,11 @@ public class Bear extends Actor
     
     int imageIndex = 0;
     public void animateBear(){
+        if(animationTimer.millisElapsed() < 1000){
+            return;
+        }
+        animationTimer.mark();
+        
         if(facing.equals("right")){
             setImage(idleRight[imageIndex]);
             imageIndex = (imageIndex + 1) % idleRight.length;
