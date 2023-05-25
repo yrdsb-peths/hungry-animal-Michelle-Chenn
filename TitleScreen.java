@@ -29,6 +29,7 @@ public class TitleScreen extends World
             Greenfoot.setWorld(gameWorld);
         }
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -38,5 +39,10 @@ public class TitleScreen extends World
         Bear bear = new Bear();
         addObject(bear,289,93);
         bear.setLocation(293,108);
+        Label label = new Label("*Press Space to start*", 30);
+        addObject(label,getWidth()/2,255);
+        
+        Label instructions = new Label("Use WASD", 20);
+        addObject(instructions,getWidth()/2,280);
     }
 }
