@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
+    public int health = 10;
+    Label healthBar;
     int level = 1;
         
     /**
@@ -29,6 +31,21 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
+        //Create health bar
+        healthBar = new Label (10, 80);
+        addObject(healthBar, 660, 50);
+        
+        cherryFalls.mark();
+        createCherries();
+    }
+    
+    SimpleTimer cherryFalls = new SimpleTimer();
+    
+    public void act(){
+        if(cherryFalls.millisElapsed() < 1000){
+            return;
+        }
+        cherryFalls.mark();
         createCherries();
     }
     
@@ -50,6 +67,11 @@ public class MyWorld extends World
         if(score % 5 == 0){
             level += 1;
         }
+    }
+    
+    public void decreaseHealth(){
+        health--;
+        healthBar.setValue(health);
     }
     
     /**
