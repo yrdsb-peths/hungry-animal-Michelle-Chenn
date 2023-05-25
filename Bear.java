@@ -40,7 +40,7 @@ public class Bear extends Actor
     
     int imageIndex = 0;
     public void animateBear(){
-        if(animationTimer.millisElapsed() < 1000){
+        if(animationTimer.millisElapsed() < 300){
             return;
         }
         animationTimer.mark();
