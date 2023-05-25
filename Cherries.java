@@ -23,10 +23,14 @@ public class Cherries extends Actor
         setLocation(getX(), getY() + speed);
         
         //Remove cherries and draw game over when cherries hit the bottom
+        int health = 20;
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight()){
-            world.gameOver();
-            world.removeObject(this);
+            health -= 1;
+            if(health<=0){
+                world.gameOver();
+                world.removeObject(this);
+            }
         }
     }
     

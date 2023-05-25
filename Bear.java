@@ -55,6 +55,14 @@ public class Bear extends Actor
         }
     }
     
+    public void makeCherriesFall(){
+        if(animationTimer.millisElapsed() < 300){
+            return;
+        }
+        animationTimer.mark();
+        }
+    }
+    
     /**
      * Act - do whatever the Bear wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -75,6 +83,7 @@ public class Bear extends Actor
         
         //Remove cherries if Bear eats it
         eat();
+
         
         //animate bear
         animateBear();
