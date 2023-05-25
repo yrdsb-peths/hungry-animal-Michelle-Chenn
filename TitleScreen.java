@@ -37,7 +37,7 @@ public class TitleScreen extends World
     private void prepare()
     {
         Bear bear = new Bear();
-        addObject(bear,289,93);
+        addObject(bear,getWidth()/2,93);
         bear.setLocation(293,108);
         Label label = new Label("*Press Space to start*", 30);
         addObject(label,getWidth()/2,255);

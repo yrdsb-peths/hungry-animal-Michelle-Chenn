@@ -64,12 +64,12 @@ public class Bear extends Actor
         // Add your action code here.
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-2);
+            move(-4);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(2);
+            move(4);
             facing = "right";
         }
         
