@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
-    public int health = 10;
+    public static int health = 10;
     Label healthBar;
     int level = 1;
         
@@ -47,6 +47,10 @@ public class MyWorld extends World
         }
         cherryFalls.mark();
         createCherries();
+    }
+    
+    public static int getHealth(){
+        return health;
     }
     
     /**
