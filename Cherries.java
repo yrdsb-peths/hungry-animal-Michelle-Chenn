@@ -14,7 +14,6 @@ public class Cherries extends Actor
      */
     
     int speed = 1;
-    
     public void act()
     {
         // Add your action code here.
@@ -24,16 +23,15 @@ public class Cherries extends Actor
         
         //Remove cherries and draw game over when cherries hit the bottom
         MyWorld world = (MyWorld) getWorld();
-        int healthy = 0;
         if(getY() >= world.getHeight()){
             world.decreaseHealth();
             world.removeObject(this);
-            healthy = healthy + 1;
-            if(healthy>=10){
-                world.gameOver();
-                world.removeObject(this);
-            }   
         }
+        
+        if(MyWorld.getHealth() == 0){
+            world.gameOver();
+            world.removeObject(this);
+        }   
 
     }
     
