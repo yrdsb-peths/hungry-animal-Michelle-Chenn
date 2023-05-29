@@ -38,18 +38,20 @@ public class Bear extends Actor
      */
     int imageIndex = 0;
     public void animateBear(){
-        if(animationTimer.millisElapsed() < 300){
-            return;
-        }
-        animationTimer.mark();
-        
-        if(facing.equals("right")){
-            setImage(idleRight[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleRight.length;
-        }
-        else{
-            setImage(idleLeft[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleLeft.length;
+        if(Greenfoot.isKeyDown("a")||Greenfoot.isKeyDown("d")){
+            if(animationTimer.millisElapsed() < 190){
+                return;
+            }
+            animationTimer.mark();
+            
+            if(facing.equals("right")){
+                setImage(idleRight[imageIndex]);
+                imageIndex = (imageIndex + 1) % idleRight.length;
+            }
+            else{
+                setImage(idleLeft[imageIndex]);
+                imageIndex = (imageIndex + 1) % idleLeft.length;
+            }
         }
     }
     
