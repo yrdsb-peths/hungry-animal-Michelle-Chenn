@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * World Bear lives in
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michelle
+ * @version May 2023
  */
 public class MyWorld extends World
 {
@@ -35,7 +35,7 @@ public class MyWorld extends World
         healthBar = new Label (10, 80);
         addObject(healthBar, 660, 50);
         
-        //
+        //Makes cherries fall
         cherryFalls.mark();
         createCherries();
     }
@@ -61,7 +61,7 @@ public class MyWorld extends World
     }
     
     /**
-     * Increase score
+     * Increases score and game difficulty
      */
     public void increaseScore(){
         score++;
@@ -72,6 +72,9 @@ public class MyWorld extends World
         }
     }
     
+    /**
+     * Decreases health and ends game when health reaches 0
+     */
     public void decreaseHealth(){
         health--;
         healthBar.setValue(health);

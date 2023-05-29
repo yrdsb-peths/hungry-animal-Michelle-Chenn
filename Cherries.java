@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Food for wombat
+ * Food for Bear
  * 
  * @author Michelle 
  * @version May 2023
@@ -17,25 +17,19 @@ public class Cherries extends Actor
     
     public void act()
     {
-        // Add your action code here.
-        
         //makes it fall down
         setLocation(getX(), getY() + speed);
         
-        //Remove cherries and draw game over when cherries hit the bottom
+        //Remove cherries and decreases health when cherries hit the bottom
         MyWorld world = (MyWorld) getWorld();
-        int healthy = 10;
         if(getY() >= world.getHeight()){
             world.decreaseHealth();
             world.removeObject(this);
-            healthy = healthy - 1;
-            if(healthy==0){
-                world.removeObject(this);
-            }
         }
 
     }
     
+    //speed?
     public void setSpeed(int spd){
         speed = spd;
     }

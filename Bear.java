@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bear here.
+ * Bear
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michelle
+ * @version May 2023
  */
 public class Bear extends Actor
 {
@@ -33,11 +33,7 @@ public class Bear extends Actor
         //Initial bear image
         setImage(idleRight[0]);
     }
-    
-    /**
-     * animate bear
-     */
-    
+    //animates Bear
     int imageIndex = 0;
     public void animateBear(){
         if(animationTimer.millisElapsed() < 300){
@@ -61,7 +57,7 @@ public class Bear extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        //Moves Bear left and right using 'a' and 'd' keys
         if(Greenfoot.isKeyDown("a"))
         {
             move(-4);
@@ -76,12 +72,12 @@ public class Bear extends Actor
         //Remove cherries if Bear eats it
         eat();
         
-        //animate bear
+        //Animates bear
         animateBear();
     }
     
     /**
-     * Eat the cherries and spawn new cherries if it is eaten
+     * Eat the cherries and increase score if it is eaten
      */
     public void eat(){
         if(isTouching(Cherries.class)){
