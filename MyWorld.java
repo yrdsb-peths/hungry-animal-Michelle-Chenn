@@ -35,6 +35,7 @@ public class MyWorld extends World
         healthBar = new Label (10, 80);
         addObject(healthBar, 660, 50);
         
+        //
         cherryFalls.mark();
         createCherries();
     }
@@ -42,11 +43,13 @@ public class MyWorld extends World
     SimpleTimer cherryFalls = new SimpleTimer();
     
     public void act(){
-        if(cherryFalls.millisElapsed() < 1000){
-            return;
+        if(health>0){
+            if(cherryFalls.millisElapsed() < 1000){
+                return;
+            }
+            cherryFalls.mark();
+            createCherries();
         }
-        cherryFalls.mark();
-        createCherries();
     }
     
     /**
@@ -72,6 +75,9 @@ public class MyWorld extends World
     public void decreaseHealth(){
         health--;
         healthBar.setValue(health);
+        if(health==0){
+            gameOver();
+        }
     }
     
     /**

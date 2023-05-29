@@ -24,15 +24,14 @@ public class Cherries extends Actor
         
         //Remove cherries and draw game over when cherries hit the bottom
         MyWorld world = (MyWorld) getWorld();
-        int healthy = 0;
+        int healthy = 10;
         if(getY() >= world.getHeight()){
             world.decreaseHealth();
             world.removeObject(this);
-            healthy = healthy + 1;
-            if(healthy>=10){
-                world.gameOver();
+            healthy = healthy - 1;
+            if(healthy==0){
                 world.removeObject(this);
-            }   
+            }
         }
 
     }
