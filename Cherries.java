@@ -22,14 +22,20 @@ public class Cherries extends Actor
         
         //Remove cherries and decreases health when cherries hit the bottom
         MyWorld world = (MyWorld) getWorld();
+        int health = 10;
         if(getY() >= world.getHeight()){
-            world.decreaseHealth();
+            health--;
+            if(health>0){
+                world.decreaseHealth();
+            }
             world.removeObject(this);
         }
 
     }
     
-    //speed?
+    /**
+     * Sets speed that cherries fall at
+     */
     public void setSpeed(int spd){
         speed = spd;
     }

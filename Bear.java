@@ -17,7 +17,6 @@ public class Bear extends Actor
     /**
      * Constructor - The code that gets run one time when object is created
      */
-    
     public Bear(){
         for(int i = 0; i < idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/bear_idle/idle" + i + ".png");
@@ -33,7 +32,10 @@ public class Bear extends Actor
         //Initial bear image
         setImage(idleRight[0]);
     }
-    //animates Bear
+    
+    /**
+     * Animates Bear
+     */
     int imageIndex = 0;
     public void animateBear(){
         if(animationTimer.millisElapsed() < 300){

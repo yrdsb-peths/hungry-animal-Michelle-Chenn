@@ -44,6 +44,7 @@ public class MyWorld extends World
     
     public void act(){
         if(health>0){
+            //Makes cherries fall every second
             if(cherryFalls.millisElapsed() < 1000){
                 return;
             }
@@ -76,8 +77,11 @@ public class MyWorld extends World
      * Decreases health and ends game when health reaches 0
      */
     public void decreaseHealth(){
-        health--;
-        healthBar.setValue(health);
+        if(health>0){
+            health--;
+            healthBar.setValue(health);
+        }
+
         if(health==0){
             gameOver();
         }
