@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bear extends Actor
 {
+    GreenfootSound bearSound = new GreenfootSound("bearchomp.mp3");
+    
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
     
@@ -88,6 +90,7 @@ public class Bear extends Actor
             removeTouching(Cherries.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
+            bearSound.play();
         }
     }
 }
